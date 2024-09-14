@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
+ *
  *
  * @property int $id
  * @property string $title
@@ -27,4 +27,13 @@ use Illuminate\Database\Eloquent\Model;
 class task extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'is_done'
+    ];
+
+    protected $casts = [
+        'is_done' => 'bool'
+    ];
 }
